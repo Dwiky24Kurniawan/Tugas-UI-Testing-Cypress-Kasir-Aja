@@ -18,8 +18,8 @@ describe('Open Kasir Aja URL', () => {
   it('Tambah Kategori', () => {
     cy.contains("kategori").click()
     cy.contains("tambah").click()
-    cy.get('#nama').type("ultra milk")
-    cy.get('#deskripsi').type("susu uht")
+    cy.get('#nama').type("smartphone")
+    cy.get('#deskripsi').type("smartphone")
     cy.contains("simpan").click()
 
     // should be redirected to /categories

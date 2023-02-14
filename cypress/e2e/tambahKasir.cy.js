@@ -18,9 +18,9 @@ describe('Open Kasir Aja URL', () => {
   it('Tambah Pengguna Kasir', () => {
     cy.contains("pengguna").click()
     cy.contains("tambah").click()
-    cy.get('#nama').type("toko dwiky kurniawan")
-    cy.get('#email').type("toko@dwiky.com")
-    cy.get('#password').type("toko24dwiky")
+    cy.get('#nama').type("kasir baru dwiky")
+    cy.get('#email').type("kasirbaru@tokodwiky.com")
+    cy.get('#password').type("kasirbaru")
     cy.contains("simpan").click()
 
     // should be redirected to /users

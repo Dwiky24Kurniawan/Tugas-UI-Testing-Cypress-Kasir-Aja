@@ -18,10 +18,10 @@ describe('Open Kasir Aja URL', () => {
   it('Tambah Pelanggan', () => {
     cy.contains("pelanggan").click()
     cy.contains("tambah").click()
-    cy.get('#nama').type("zain")
-    cy.get('input[id="no.hp"]').type("088811223344")
-    cy.get('#alamat').type("jogja")
-    cy.get('#keterangan').type("tes pelanggan")
+    cy.get('#nama').type("new customer")
+    cy.get('input[id="no.hp"]').type("089988776655")
+    cy.get('#alamat').type("bantul")
+    cy.get('#keterangan').type("tes new customer")
     cy.contains("simpan").click()
 
     // should be redirected to /customers
