@@ -15,25 +15,3 @@ describe('Open Kasir Aja URL', () => {
     cy.contains("kasirAja")
   })
 })
-
-// import '../support/commands'
-
-// describe('Open Kasir Aja URL and Login with auth', () => {
-//   beforeEach(() => {
-//     const email = 'toko@dwiky.com'
-//     const password = 'toko24dwiky'
-//     cy.LoginWithSession(email, password)
-//   })
-
-
-
-//   // it('Tambah Kategori', () => {
-//   //   // cy.visit('/categories')
-//   //   cy.contains("kategori").click()
-//   //   cy.contains("tambah").click()
-//   //   cy.get('#nama').type("samsung")
-//   //   cy.get('#deskripsi').type("smartphone")
-//   //   cy.contains("simpan").click()
-//   //   cy.url().should('include', '/categories')
-//   // })
-// })

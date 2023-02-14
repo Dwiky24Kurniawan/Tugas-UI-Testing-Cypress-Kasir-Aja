@@ -25,15 +25,3 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // -- Visit multiple domains in one test
-
-// Cypress.Commands.add('LoginWithSession', (email, password) => {
-//     cy.session([email, password], () => {
-//         cy.visit('https://kasirdemo.belajarqa.com')
-//         cy.get('#email').type(email)
-//         cy.get('#password').type(password)
-//         cy.contains("login").click()
-//         // should be redirected to /dashboard
-//         cy.url().should('include', '/dashboard')
-//         cy.contains("kasirAja")
-//     })
-// })
