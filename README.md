@@ -1,5 +1,6 @@
 # Tugas-UI-Testing-Cypress-Kasir-Aja
-Ini adalah Tugas UI Testing Cypress Kasir Aja Sanbercode
+NAMA : DWIKY KURNIAWAN
+- Ini adalah Tugas UI Testing Cypress Kasir Aja Sanbercode
 
 How to install
 - npm init
@@ -7,4 +8,4 @@ How to install
 - npm install --save-dev
 
 How to run
-- npx cypress run
+- npx cypress open
