@@ -1,5 +1,5 @@
 # Tugas-UI-Testing-Cypress-Kasir-Aja
-NAMA : DWIKY KURNIAWAN
+Nama : Dwiky Kurniawan
 - Ini adalah Tugas UI Testing Cypress Kasir Aja Sanbercode
 
 How to install
@@ -9,3 +9,5 @@ How to install
 
 How to run
 - npx cypress open
+
+Link recording running program : 
