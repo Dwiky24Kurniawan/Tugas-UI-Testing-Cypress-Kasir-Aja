@@ -1,0 +1,27 @@
+{
+  "name": "tugas-ui-testing-cypress-kasir-aja",
+  "version": "1.0.0",
+  "description": "Tugas UI Testing Cypress Kasir Aja Sanbercode",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dwiky24Kurniawan/Tugas-UI-Testing-Cypress-Kasir-Aja.git"
+  },
+  "keywords": [
+    "cypress",
+    "kasiraja"
+  ],
+  "author": "Dwiky Kurniawan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dwiky24Kurniawan/Tugas-UI-Testing-Cypress-Kasir-Aja/issues"
+  },
+  "homepage": "https://github.com/Dwiky24Kurniawan/Tugas-UI-Testing-Cypress-Kasir-Aja#readme",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^10.11.0"
+  }
+}

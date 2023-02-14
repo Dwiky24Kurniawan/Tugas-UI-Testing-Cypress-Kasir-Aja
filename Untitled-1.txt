@@ -1,0 +1,47 @@
+require('@cypress/xpath');
+
+describe('Open Kasir Aja URL', () => {
+  it('should contains endpoint /login', () => {
+    cy.visit('https://kasirdemo.belajarqa.com')
+    cy.url().should('include', '/login')
+  })
+
+  it('input valid username dan password then Login', () => {
+    cy.visit('https://kasirdemo.belajarqa.com')
+
+    // Get an input, type into it
+    cy.get('#email').type("toko@dwiky.com")
+    cy.get('#password').type("toko24dwiky")
+    cy.contains("login").click()
+
+    // Should be on a new URL which
+    // includes '/dashboard'
+    cy.url().should('include', '/dashboard')
+    cy.contains("kasirAja")
+  })
+
+  it('add cashier', () => {
+    //cy.visit('/dashboard')
+
+    cy.xpath('//*[@id="root"]/div/div/div[1]/div/a[7]/div').click()
+    cy.xpath('//*[@id="root"]/div/div/div[2]/div[2]/div[2]/a').click()
+    cy.get('#nama').type("tes kasir dwiky")
+    cy.get('#email').type("teskasir@dwiky.com")
+    cy.get('#password').type("teskasirdwiky")
+    cy.xpath('//*[@id="root"]/div/div/div[2]/div[2]/div[2]/button').click()
+    
+
+    // Should be on a new URL which
+    // includes '/dashboard'
+    // cy.url().should('include', '/users')
+    // cy.contains("tambah")
+
+    // cy.contains("tambah").click()
+    // cy.url().should('include', '/users/create')
+    
+    // Get an input, type into it
+    
+    //cy.contains("login").click()
+
+  })
+})
