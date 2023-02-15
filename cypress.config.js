@@ -5,9 +5,6 @@ module.exports = defineConfig({
     baseUrl: 'https://kasirdemo.belajarqa.com',
     specPattern: "cypress/e2e",
     supportFile: false,
-    chromeWebSecurity: false,
-    // testIsolation: false
-    // experimentalStudio: true
-    // experimentalSessionAndOrigin: true
+    chromeWebSecurity: false
   },
 });
