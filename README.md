@@ -10,4 +10,4 @@ How to install
 How to run
 - npx cypress open
 
-Link recording running program : 
+Link recording running program : https://drive.google.com/file/d/1sudn_aLhkfJosug-8XZq8VVRvNsgOjRq/view?usp=share_link
