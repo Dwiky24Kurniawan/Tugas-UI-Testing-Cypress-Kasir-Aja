@@ -30,21 +30,21 @@ describe('Test Add Category kasirAja', () => {
     cy.contains("item ditambahkan")
   })
 
-  it('cannot add category without any input', () => {
-    cy.contains("kategori").click()
-    cy.contains("tambah").click()
-    cy.contains("simpan").click()
-    
-    // should display alert "name" is not allowed to be empty
-    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
-  })
-
   it('cannot add category without input name of category', () => {
     cy.contains("kategori").click()
     cy.contains("tambah").click()
     cy.get('#deskripsi').type("smartphone")
     cy.contains("simpan").click()
 
+    // should display alert "name" is not allowed to be empty
+    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
+  })
+
+  it('cannot add category without any input', () => {
+    cy.contains("kategori").click()
+    cy.contains("tambah").click()
+    cy.contains("simpan").click()
+    
     // should display alert "name" is not allowed to be empty
     cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
   })

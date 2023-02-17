@@ -31,15 +31,6 @@ describe('Test Add User (Cashier) kasirAja', () => {
     cy.contains("item ditambahkan")
   })
 
-  it('cannot create users cashier without any input', () => {
-    cy.contains("pengguna").click()
-    cy.contains("tambah").click()
-    cy.contains("simpan").click()
-
-    // should display alert "name" is not allowed to be empty
-    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
-  })
-
   it('cannot create users cashier without input name of users (cashier)', () => {
     cy.contains("pengguna").click()
     cy.contains("tambah").click()
@@ -83,5 +74,14 @@ describe('Test Add User (Cashier) kasirAja', () => {
 
     // should display alert "password" is not allowed to be empty
     cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"password" is not allowed to be empty')
+  })
+
+  it('cannot create users cashier without any input', () => {
+    cy.contains("pengguna").click()
+    cy.contains("tambah").click()
+    cy.contains("simpan").click()
+
+    // should display alert "name" is not allowed to be empty
+    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
   })
 })

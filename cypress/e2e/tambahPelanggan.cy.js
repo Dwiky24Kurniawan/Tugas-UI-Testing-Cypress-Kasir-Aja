@@ -32,15 +32,6 @@ describe('Test Add Customer kasirAja', () => {
     cy.contains("item ditambahkan")
   })
 
-  it('cannot add customer without any input', () => {
-    cy.contains("pelanggan").click()
-    cy.contains("tambah").click()
-    cy.contains("simpan").click()
-
-    // should display alert "name" is not allowed to be empty
-    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
-  })
-
   it('cannot add customer without input name of customer', () => {
     cy.contains("pelanggan").click()
     cy.contains("tambah").click()
@@ -62,5 +53,14 @@ describe('Test Add Customer kasirAja', () => {
 
     // should display alert "phone" must be a number
     cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"phone" must be a number')
+  })
+
+  it('cannot add customer without any input', () => {
+    cy.contains("pelanggan").click()
+    cy.contains("tambah").click()
+    cy.contains("simpan").click()
+
+    // should display alert "name" is not allowed to be empty
+    cy.get('#root > div > div > div.css-1r35f0l > div.chakra-container.css-9rmdie > div.css-1t33j5j > div.chakra-alert.css-qwanz3').should('have.text','"name" is not allowed to be empty')
   })
 })
