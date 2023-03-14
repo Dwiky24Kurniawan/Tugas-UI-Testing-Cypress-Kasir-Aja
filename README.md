@@ -8,3 +8,5 @@ How to install
 
 How to run
 - npx cypress open
+
+Link test case and recorded running program : https://drive.google.com/drive/u/0/folders/1CPYyfhC0KPn9fzgpjN2CNNC78FghlS2M
