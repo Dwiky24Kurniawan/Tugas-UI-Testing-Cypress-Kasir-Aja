@@ -22,6 +22,6 @@
   "homepage": "https://github.com/Dwiky24Kurniawan/Tugas-UI-Testing-Cypress-Kasir-Aja#readme",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress": "^10.11.0"
+    "cypress": "^12.15.0"
   }
 }
