@@ -5,7 +5,7 @@ beforeEach(() => {
 describe('Test Add Category kasirAja', () => {
   it('success add category with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('a[href="/categories/create"]').click()
     cy.wait(1000)
@@ -27,7 +27,7 @@ describe('Test Add Category kasirAja', () => {
 
   it('cannot add category without input name of category', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('a[href="/categories/create"]').click()
     cy.wait(1000)
@@ -43,7 +43,7 @@ describe('Test Add Category kasirAja', () => {
 
   it('cannot add category without any input', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('a[href="/categories/create"]').click()
     cy.wait(1000)
@@ -57,7 +57,7 @@ describe('Test Add Category kasirAja', () => {
 
   it('success edit kategori with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
     cy.wait(1000)
@@ -80,7 +80,7 @@ describe('Test Add Category kasirAja', () => {
 
   it('success search kategori', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('.chakra-input.css-2s2hk4').clear().type('laptop gaming{enter}')
     cy.wait(1000)
@@ -95,7 +95,7 @@ describe('Test Add Category kasirAja', () => {
 
   it('success delete kategori', () => {
     cy.visit('/')
-    cy.get('[href="/categories"] > .css-ewi1jp').click()
+    cy.get('a[href="/categories"]').click()
     cy.wait(1000)
     cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
     cy.wait(1000)
@@ -110,6 +110,28 @@ describe('Test Add Category kasirAja', () => {
     // should show notification "success item dihapus"
     cy.contains("success")
     cy.contains("item dihapus")
+    cy.wait(1000)
+  })
+
+  it('success add category with valid input', () => {
+    cy.visit('/')
+    cy.get('a[href="/categories"]').click()
+    cy.wait(1000)
+    cy.get('a[href="/categories/create"]').click()
+    cy.wait(1000)
+    cy.get('#nama').type("smartphone")
+    cy.wait(1000)
+    cy.get('#deskripsi').type("smartphone")
+    cy.wait(1000)
+    cy.contains('button', 'simpan').click()
+    cy.wait(1000)
+
+    // should be redirected to /categories
+    cy.location('pathname').should('eq', '/categories')
+
+    // should show notification "success item ditambahkan"
+    cy.contains("success")
+    cy.contains("item ditambahkan")
     cy.wait(1000)
   })
 })

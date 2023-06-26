@@ -5,8 +5,7 @@ beforeEach(() => {
 describe('Test Add User Cashier kasirAja', () => {
   it('success create users cashier with valid input', () => {
     cy.visit('/')
-    // cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(8) > div > div > div').click()
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"] ').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -30,7 +29,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('cannot create users cashier without input name of users (cashier)', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -48,7 +47,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('cannot create users cashier without input email', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -66,7 +65,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('cannot create users cashier with invalid email format', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -86,7 +85,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('cannot create users cashier without input password', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -104,7 +103,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('cannot create users cashier without any input', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('a[href="/users/create"]').click()
     cy.wait(1000)
@@ -118,7 +117,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('success edit users cashier with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
     cy.wait(1000)
@@ -142,9 +141,9 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.wait(1000)
   })
 
-  it('success search pengguna / kasir', () => {
+  it('success search users cashier', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('.chakra-input.css-2s2hk4').clear().type('dwiky{enter}')
     cy.wait(1000)
@@ -159,7 +158,7 @@ describe('Test Add User Cashier kasirAja', () => {
 
   it('success delete users cashier', () => {
     cy.visit('/')
-    cy.get('[href="/users"] > .css-ewi1jp').click()
+    cy.get('a[href="/users"]').click()
     cy.wait(1000)
     cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
     cy.wait(1000)
@@ -174,6 +173,31 @@ describe('Test Add User Cashier kasirAja', () => {
     // should show notification "success item dihapus"
     cy.contains("success")
     cy.contains("item dihapus")
+    cy.wait(1000)
+  })
+
+  it('success create users cashier again', () => {
+    cy.visit('/')
+    // cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(8) > div > div > div').click()
+    cy.get('a[href="/users"] ').click()
+    cy.wait(1000)
+    cy.get('a[href="/users/create"]').click()
+    cy.wait(1000)
+    cy.get('#nama').type("kasir baru dwiky")
+    cy.wait(1000)
+    cy.get('#email').type("kasirbaru@tokodwiky.com")
+    cy.wait(1000)
+    cy.get('#password').type("kasirbaru")
+    cy.wait(1000)
+    cy.contains('button', 'simpan').click()
+    cy.wait(1000)
+
+    // should be redirected to /users
+    cy.location('pathname').should('eq', '/users')
+
+    // should show notification "success item ditambahkan"
+    cy.contains("success")
+    cy.contains("item ditambahkan")
     cy.wait(1000)
   })
 })

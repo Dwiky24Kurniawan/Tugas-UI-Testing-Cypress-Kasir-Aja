@@ -5,7 +5,7 @@ beforeEach(() => {
 describe('Test Add Customer kasirAja', () => {
   it('success add customer with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('a[href="/customers/create"]').click()
     cy.wait(1000)
@@ -31,7 +31,7 @@ describe('Test Add Customer kasirAja', () => {
 
   it('cannot add customer without input name of customer', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('a[href="/customers/create"]').click()
     cy.wait(1000)
@@ -51,7 +51,7 @@ describe('Test Add Customer kasirAja', () => {
 
   it('cannot add customer with invalid phone number format', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('a[href="/customers/create"]').click()
     cy.wait(1000)
@@ -69,7 +69,7 @@ describe('Test Add Customer kasirAja', () => {
 
   it('cannot add customer without any input', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('a[href="/customers/create"]').click()
     cy.wait(1000)
@@ -83,7 +83,7 @@ describe('Test Add Customer kasirAja', () => {
 
   it('success edit pelanggan with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
     cy.wait(1000)
@@ -108,9 +108,9 @@ describe('Test Add Customer kasirAja', () => {
     cy.contains("item diubah")
   })
 
-  it('success search pelanggan', () => {
+  it('success search customer', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
     cy.get('.chakra-input.css-2s2hk4').clear().type('zain{enter}')
     cy.wait(1000)
@@ -122,24 +122,29 @@ describe('Test Add Customer kasirAja', () => {
     cy.contains("zain")
     cy.wait(1000)
   })
-
-  it('success delete pelanggan', () => {
+  it('success add customer with valid input', () => {
     cy.visit('/')
-    cy.get('[href="/customers"] > .css-ewi1jp').click()
+    cy.get('a[href="/customers"]').click()
     cy.wait(1000)
-    cy.get('.css-xl71ch').get('button[type="button"]').eq(2).click()
+    cy.get('a[href="/customers/create"]').click()
     cy.wait(1000)
-    cy.contains('button', 'hapus').click()
+    cy.get('#nama').type("zain al farizky")
     cy.wait(1000)
-    cy.contains('button', 'Delete').click()
+    cy.get('input[id="no.hp"]').type("089988776655")
+    cy.wait(1000)
+    cy.get('#alamat').type("bantul")
+    cy.wait(1000)
+    cy.get('#keterangan').type("customer zain bantul")
+    cy.wait(1000)
+    cy.contains('button', 'simpan').click()
     cy.wait(1000)
 
     // should be redirected to /customers
     cy.location('pathname').should('eq', '/customers')
     
-    // should show notification "success item dihapus"
+    // should show notification "success item ditambahkan"
     cy.contains("success")
-    cy.contains("item dihapus")
+    cy.contains("item ditambahkan")
     cy.wait(1000)
   })
 })
