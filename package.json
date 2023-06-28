@@ -13,7 +13,8 @@
   },
   "keywords": [
     "cypress",
-    "kasiraja"
+    "mochawesome reporter",
+    "mocha junit reporter"
   ],
   "author": "Dwiky Kurniawan",
   "license": "ISC",
