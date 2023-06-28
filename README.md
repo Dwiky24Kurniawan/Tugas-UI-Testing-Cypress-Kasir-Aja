@@ -9,10 +9,20 @@ npm init
 ```
 npm install cypress --save-dev
 ```
-
-
+```
+npm i --save-dev cypress-mochawesome-reporter
+```
+```
+npm i mocha-junit-reporter
+```
 
 How to run
-- npx cypress open
+```
+npm run test
+```
+or
+```
+npx cypress open
+```
 
-Link test case and recorded running program : https://drive.google.com/drive/u/0/folders/1CPYyfhC0KPn9fzgpjN2CNNC78FghlS2M
+Link test case and recorded running program : 
