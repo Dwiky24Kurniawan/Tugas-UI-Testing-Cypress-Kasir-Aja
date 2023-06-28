@@ -32,7 +32,6 @@ Cypress.Commands.add('login', (email, password) => {
         cy.location('pathname').should('eq', '/login')
         cy.get('#email').clear().type(email)
         cy.get('#password').clear().type(password)
-        // cy.contains("login").click()
         cy.get('button[type="submit"]').click()
         cy.location('pathname').should('eq', '/dashboard')
     },

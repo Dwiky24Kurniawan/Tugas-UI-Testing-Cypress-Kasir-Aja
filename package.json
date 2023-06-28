@@ -4,7 +4,8 @@
   "description": "Tugas UI Testing Cypress Kasir Aja Sanbercode",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run"
+    "test": "npx cypress run --browser chrome",
+    "openTest": "npx cypress open"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,10 @@
   },
   "homepage": "https://github.com/Dwiky24Kurniawan/Tugas-UI-Testing-Cypress-Kasir-Aja#readme",
   "devDependencies": {
-    "@cypress/xpath": "^2.0.3",
-    "cypress": "^12.15.0"
+    "cypress": "^12.15.0",
+    "cypress-mochawesome-reporter": "^3.5.1"
+  },
+  "dependencies": {
+    "mocha-junit-reporter": "^2.2.0"
   }
 }

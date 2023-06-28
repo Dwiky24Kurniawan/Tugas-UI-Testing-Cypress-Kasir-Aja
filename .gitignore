@@ -104,3 +104,8 @@ dist
 
 # TernJS port file
 .tern-port
+cypress/reports/html/videos/1-login.cy.js.mp4
+cypress/reports/html/videos/2-pengguna.cy.js.mp4
+cypress/reports/html/videos/3-pelanggan.cy.js.mp4
+cypress/reports/html/videos/4-kategori.cy.js.mp4
+cypress/reports/html/videos/5-produk.cy.js.mp4
