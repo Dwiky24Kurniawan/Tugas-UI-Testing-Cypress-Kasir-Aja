@@ -1,5 +1,5 @@
 describe('Test Login kasirAja', () => {
-  it('success login using valid credential', () => {
+  it('success login with valid credential', () => {
     cy.visit('/')
     cy.location('pathname').should('eq', '/login')
     cy.get('#email').type("toko@dwiky.com")

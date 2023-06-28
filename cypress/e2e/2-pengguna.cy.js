@@ -3,7 +3,7 @@ beforeEach(() => {
 })
 
 describe('Test Add User Cashier kasirAja', () => {
-  it('success create users cashier with valid input', () => {
+  it('success add user cashier with valid input', () => {
     cy.visit('/')
     cy.get('a[href="/users"] ').click()
     cy.get('a[href="/users/create"]').click()
@@ -21,7 +21,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('cannot create users cashier without input name of users (cashier)', () => {
+  it('cannot add user cashier without input name', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.get('a[href="/users/create"]').click()
@@ -34,7 +34,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('cannot create users cashier without input email', () => {
+  it('cannot add user cashier without input email', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.get('a[href="/users/create"]').click()
@@ -47,7 +47,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('cannot create users cashier with invalid email format', () => {
+  it('cannot add user cashier with invalid email format', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.get('a[href="/users/create"]').click()
@@ -61,7 +61,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('cannot create users cashier without input password', () => {
+  it('cannot add user cashier without input password', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.get('a[href="/users/create"]').click()
@@ -74,7 +74,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('cannot create users cashier without any input', () => {
+  it('cannot add user cashier without any input', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.get('a[href="/users/create"]').click()
@@ -85,7 +85,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('success edit users cashier with valid input', () => {
+  it('success edit user cashier with valid input', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.contains('tes kasir baru').parent('tr').within(() => {
@@ -106,7 +106,7 @@ describe('Test Add User Cashier kasirAja', () => {
     
   })
 
-  it('success search users cashier', () => {
+  it('success search user cashier', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()   
     cy.get('.chakra-input.css-2s2hk4').clear().type('kasir baru gaes{enter}')
@@ -114,12 +114,12 @@ describe('Test Add User Cashier kasirAja', () => {
     // should be redirected to /categories
     cy.location('pathname').should('eq', '/users')
 
-    // should show search for "dwiky"
+    // should show search for "kasir baru gaes"
     cy.contains("kasir baru gaes")
     
   })
 
-  it('success delete users cashier', () => {
+  it('success delete user cashier', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()    
     cy.contains('kasir baru gaes').parent('tr').within(() => {

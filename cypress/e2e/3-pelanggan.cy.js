@@ -29,7 +29,7 @@ describe('Test Add Customer kasirAja', () => {
     cy.wait(1000)
   })
 
-  it('cannot add customer without input name of customer', () => {
+  it('cannot add customer without input name', () => {
     cy.visit('/')
     cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(9)').click()
     cy.wait(1000)
@@ -46,6 +46,24 @@ describe('Test Add Customer kasirAja', () => {
 
     // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text','"name" is not allowed to be empty')
+    cy.wait(1000)
+  })
+
+it('cannot add customer with invalid phone number format', () => {
+    cy.visit('/')
+    cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(9)').click()
+    cy.wait(1000)
+    cy.get('a[href="/customers/create"]').click()
+    cy.wait(1000)
+    cy.get('#nama').type("jovial")
+    cy.wait(1000)
+    cy.get('input[id="no.hp"]').type("no hp jovial")
+    cy.wait(1000)
+    cy.contains('button', 'simpan').click()
+    cy.wait(1000)
+
+    // should display alert "phone" must be a number
+    cy.get('div[role="alert"]').should('have.text','"phone" must be a number')
     cy.wait(1000)
   })
 

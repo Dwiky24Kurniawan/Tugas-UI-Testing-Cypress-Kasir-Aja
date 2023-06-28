@@ -25,7 +25,7 @@ describe('Test Add Category kasirAja', () => {
     cy.wait(1000)
   })
 
-  it('cannot add category without input name of category', () => {
+  it('cannot add category without input name', () => {
     cy.visit('/')
     cy.get('a[href="/categories"]').click()
     cy.wait(1000)
