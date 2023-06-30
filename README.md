@@ -16,13 +16,19 @@ npm i --save-dev cypress-mochawesome-reporter
 npm i mocha-junit-reporter
 ```
 
-How to run
+How to run and create report automatically
 ```
 npm run test
 ```
-or
+
+or how to run with visualization
 ```
 npx cypress open
+```
+
+open report
+```
+start cypress\reports\html\index.html
 ```
 
 Link recorded running program : https://drive.google.com/file/d/1-u7G7dSVC9LmGRahHNoElujeD4vxylIz/view?usp=sharing
