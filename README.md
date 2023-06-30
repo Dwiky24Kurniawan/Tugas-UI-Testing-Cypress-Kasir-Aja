@@ -25,4 +25,4 @@ or
 npx cypress open
 ```
 
-Link test case and recorded running program : 
+Link recorded running program : 
