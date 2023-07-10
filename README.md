@@ -31,4 +31,4 @@ open report
 start cypress\reports\html\index.html
 ```
 
-Link recorded running program : https://drive.google.com/file/d/1-u7G7dSVC9LmGRahHNoElujeD4vxylIz/view?usp=sharing
+Link screen recording of running program : https://drive.google.com/file/d/1-u7G7dSVC9LmGRahHNoElujeD4vxylIz/view?usp=sharing
