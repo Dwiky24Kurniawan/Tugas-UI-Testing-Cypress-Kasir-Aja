@@ -42,6 +42,7 @@ node_modules/
 jspm_packages/
 cypress/screenshots
 cypress/videos
+cypress/reports
 
 # TypeScript v1 declaration files
 typings/
@@ -109,3 +110,6 @@ cypress/reports/html/videos/2-pengguna.cy.js.mp4
 cypress/reports/html/videos/3-pelanggan.cy.js.mp4
 cypress/reports/html/videos/4-kategori.cy.js.mp4
 cypress/reports/html/videos/5-produk.cy.js.mp4
+cypress/reports/html/index.html
+cypress/reports/html/index.html
+cypress/reports/html/index.html

@@ -12,10 +12,8 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#password').type("teskasirbaru")
     cy.contains('button', 'simpan').click()
 
-    // should be redirected to /users
     cy.location('pathname').should('eq', '/users')
 
-    // should show notification "success item ditambahkan"
     cy.contains("success")
     cy.contains("item ditambahkan")
     
@@ -29,7 +27,6 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#password').type("kasirbaru")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"name" is not allowed to be empty')
     
   })
@@ -42,7 +39,6 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#password').type("kasirbaru")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "email" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"email" is not allowed to be empty')
     
   })
@@ -56,7 +52,6 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#password').type("kasirbaru")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "email" must be a valid email
     cy.get('div[role="alert"]').should('have.text', '"email" must be a valid email')
     
   })
@@ -69,7 +64,6 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#email').type("kasirbaru@tokodwiky.com")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "password" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"password" is not allowed to be empty')
     
   })
@@ -80,7 +74,6 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('a[href="/users/create"]').click()
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"name" is not allowed to be empty')
     
   })
@@ -89,7 +82,7 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()
     cy.contains('tes kasir baru').parent('tr').within(() => {
-      cy.get('td').eq(3).click() //untuk mencari button titik 3 di index kolom yang ke 3 (index dimulai dari 0)
+      cy.get('td').eq(3).click()
       cy.contains('a', 'ubah').click()
     })
     cy.get('#nama').clear().type("kasir baru gaes")
@@ -97,10 +90,8 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('#password').type("kasirbarugaes")
     cy.contains('button', 'simpan').click()
 
-    // should be redirected to /users
     cy.location('pathname').should('eq', '/users')
 
-    // should show notification "success item diubah"
     cy.contains("success")
     cy.contains("item diubah")
     
@@ -111,10 +102,8 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.get('a[href="/users"]').click()   
     cy.get('.chakra-input.css-2s2hk4').clear().type('kasir baru gaes{enter}')
 
-    // should be redirected to /categories
     cy.location('pathname').should('eq', '/users')
 
-    // should show search for "kasir baru gaes"
     cy.contains("kasir baru gaes")
     
   })
@@ -123,16 +112,13 @@ describe('Test Add User Cashier kasirAja', () => {
     cy.visit('/')
     cy.get('a[href="/users"]').click()    
     cy.contains('kasir baru gaes').parent('tr').within(() => {
-      cy.get('td').eq(3).click() //untuk mencari button titik 3 di index kolom yang ke 3 (index dimulai dari 0)
-      cy.contains('button', 'hapus').click()      
+      cy.get('td').eq(3).click()
+      cy.contains('button', 'hapus').click()
     })
     cy.contains('button', 'Delete').click()
     
-
-    // should be redirected to /users
     cy.location('pathname').should('eq', '/users')
     
-    // should show notification "success item dihapus"
     cy.contains("success")
     cy.contains("item dihapus")
     

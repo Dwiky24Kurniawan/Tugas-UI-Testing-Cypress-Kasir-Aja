@@ -13,10 +13,8 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('#keterangan').type("customer jovial bantul")
     cy.contains('button', 'simpan').click()
 
-    // should be redirected to /customers
     cy.location('pathname').should('eq', '/customers')
     
-    // should show notification "success item ditambahkan"
     cy.contains("success")
     cy.contains("item ditambahkan")
   })
@@ -30,7 +28,6 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('#keterangan').type("customer jovial bantul")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text','"name" is not allowed to be empty')
   })
 
@@ -44,7 +41,6 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('#keterangan').type("customer jovial bantul")
     cy.contains('button', 'simpan').click()
 
-    // should display alert "phone" must be a number
     cy.get('div[role="alert"]').should('have.text','"phone" must be a number')
   })
 
@@ -54,7 +50,6 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('a[href="/customers/create"]').click()
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text','"name" is not allowed to be empty')
   })
 
@@ -62,7 +57,7 @@ describe('Test Add Customer kasirAja', () => {
     cy.visit('/')
     cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(9)').click()
     cy.contains('jovial').parent('tr').within(() => {
-      cy.get('td').eq(3).click() //untuk mencari button titik 3 di index kolom yang ke 3 (index dimulai dari 0)
+      cy.get('td').eq(3).click()
       cy.contains('a', 'ubah').click()
     })
     cy.get('#nama').clear().type("jovial hasmi")
@@ -71,10 +66,8 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('#keterangan').clear().type("edit customer jovial hasmi")
     cy.contains('button', 'simpan').click()
 
-    // should be redirected to /customers
     cy.location('pathname').should('eq', '/customers')
     
-    // should show notification "success item diubah"
     cy.contains("success")
     cy.contains("item diubah")
   })
@@ -84,10 +77,8 @@ describe('Test Add Customer kasirAja', () => {
     cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(9)').click()
     cy.get('.chakra-input.css-2s2hk4').clear().type('jovial{enter}')
 
-    // should be redirected to /customers
     cy.location('pathname').should('eq', '/customers')
 
-    // should show search for "laptop gaming"
     cy.contains("jovial")
   })
 
@@ -95,15 +86,13 @@ describe('Test Add Customer kasirAja', () => {
     cy.visit('/')
     cy.get('#root > div > div > div.css-tnxwfz > div > a:nth-child(9)').click()
     cy.contains('jovial hasmi').parent('tr').within(() => {
-      cy.get('td').eq(3).click() //untuk mencari button titik 3 di index kolom yang ke 3 (index dimulai dari 0)
+      cy.get('td').eq(3).click()
       cy.contains('button', 'hapus').click()
     })
     cy.contains('button', 'Delete').click()
 
-    // should be redirected to /customers
     cy.location('pathname').should('eq', '/customers')
     
-    // should show notification "success item dihapus"
     cy.contains("success")
     cy.contains("item dihapus")
   })

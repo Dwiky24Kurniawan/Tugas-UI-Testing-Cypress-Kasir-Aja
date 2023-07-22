@@ -16,10 +16,8 @@ describe('Test Add Product kasirAja', () => {
     cy.get('table').contains('td', 'smartphone').click()
     cy.contains('button', 'simpan').click()
 
-    // should be redirected to /products
     cy.location('pathname').should('eq', '/products')
 
-    // should show notification "success item ditambahkan"
     cy.contains("success")
     cy.contains("item ditambahkan")
   })
@@ -36,7 +34,6 @@ describe('Test Add Product kasirAja', () => {
     cy.get('table').contains('td', 'smartphone').click()
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"name" is not allowed to be empty')
   })
 
@@ -52,7 +49,6 @@ describe('Test Add Product kasirAja', () => {
     cy.get('table').contains('td', 'smartphone').click()
     cy.contains('button', 'simpan').click() 
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"cost" must be greater than 0')    
   })
 
@@ -68,7 +64,6 @@ describe('Test Add Product kasirAja', () => {
     cy.get('table').contains('td', 'smartphone').click()
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"price" must be greater than ref:cost')
   })
 
@@ -83,7 +78,6 @@ describe('Test Add Product kasirAja', () => {
     cy.get('#stok').clear().type(10)
     cy.contains('button', 'simpan').click()
 
-    // should display alert "name" is not allowed to be empty
     cy.get('div[role="alert"]').should('have.text', '"category_id" is required')
   })
 
@@ -91,7 +85,7 @@ describe('Test Add Product kasirAja', () => {
     cy.visit('/')
     cy.get('a[href="/products"]').click()
     cy.contains('samsung galaxy s23 ultra').parent('tr').within(() => {
-      cy.get('td').eq(9).click() //untuk mencari button titik 3 di index kolom yang ke 9 (index dimulai dari 0)
+      cy.get('td').eq(9).click()
       cy.contains('a', 'ubah').click()
     })
     cy.get('#nama').clear().type("samsung galaxy s23 ultra")
@@ -103,10 +97,8 @@ describe('Test Add Product kasirAja', () => {
     cy.get('table').contains('td', 'smartphone').click()
     cy.contains('button', 'simpan').click()
     
-    // should be redirected to /products
     cy.location('pathname').should('eq', '/products')
 
-    // should show notification "success item diubah"
     cy.contains("success")
     cy.contains("item diubah")
     
@@ -117,10 +109,8 @@ describe('Test Add Product kasirAja', () => {
     cy.get('a[href="/products"]').click()
     cy.get('.chakra-input.css-2s2hk4').clear().type('samsung galaxy{enter}')
   
-    // should be redirected to /categories
     cy.location('pathname').should('eq', '/products')
 
-    // should show search for "dwiky"
     cy.contains("samsung galaxy")
   })
 
@@ -130,10 +120,8 @@ describe('Test Add Product kasirAja', () => {
     cy.get('.chakra-input.css-r3uri8').click()
     cy.get('table').contains('td', 'smartphone').click({ force: true })
 
-    // should be redirected to /categories
     cy.location('pathname').should('eq', '/products')
 
-    // should show search for "dwiky"
     cy.contains("samsung galaxy")
   })
 
@@ -141,15 +129,13 @@ describe('Test Add Product kasirAja', () => {
     cy.visit('/')
     cy.get('a[href="/products"]').click()
     cy.contains('samsung galaxy s23 ultra').parent('tr').within(() => {
-      cy.get('td').eq(9).click() //untuk mencari button titik 3 di index kolom yang ke 9 (index dimulai dari 0)
+      cy.get('td').eq(9).click()
       cy.contains('button', 'hapus').click()
     })
     cy.contains('button', 'Delete').click()
 
-    // should be redirected to /products
     cy.location('pathname').should('eq', '/products')
 
-    // should show notification "success item dihapus"
     cy.contains("success")
     cy.contains("item dihapus")
   })
